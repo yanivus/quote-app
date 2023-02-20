@@ -19,9 +19,7 @@ function App() {
 
   const [quote, setQuote] = useState("");
   const [author, setAuthor] = useState("");
-  const [category, setCategory] = useState(v[0]);
-
-
+  
   const capitalFL = (p) => {
       return p && p[0].toUpperCase() + p.slice(1);
   };
@@ -53,7 +51,7 @@ function App() {
   return (
     <div className="App pageBackground">
       <div>
-        <Quote quote={quote} author={author} category={capitalFL(category)}/>
+        <Quote quote={quote} author={author} category={capitalFL(defC)}/>
       </div>
     </div>
   );
