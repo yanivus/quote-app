@@ -5,6 +5,10 @@ import api from "../api/quotes";
 
 function App() {
 
+  const defQ = 'I refuse to join any club that would have me as a member.';
+  const defA = 'Groucho Marx';
+  const defC = 'Funny';
+
   const categories = ['art', 'funny', 'inspire', 'life', 'love', 'management', 'sports', 'students'];
   const v = categories.sort(()=> Math.random() - Math.random()).slice(0,1);
   // console.log(v);
@@ -31,10 +35,16 @@ function App() {
 
   useEffect(()=> {
     const mq = async () => {
-      const aq = await getQuote();
-      if (aq) {
-        setQ(aq.quote);
-        setA(aq.author);
+      try {
+        const aq = await getQuote();
+        if (aq) {
+          setQ(aq.quote);
+          setA(aq.author);
+        } 
+      } catch(e)  {
+        setQ(defQ);
+        setA(defA);
+        params.category = defC;
       }
     };
     mq();
