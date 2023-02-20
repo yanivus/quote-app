@@ -13,8 +13,8 @@ const Quote = (props) => {
                 <div className="description">{props.c}</div>
             </div>
             <div className="extra content">
-                <i class="check icon"></i>
-                Quote of the day
+                <i className="check icon"></i>
+                {props.cat}
             </div>
         </div>
     )
