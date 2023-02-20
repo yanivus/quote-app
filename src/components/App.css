@@ -36,3 +36,18 @@
     transform: rotate(360deg);
   }
 }
+
+.pageBackground {
+  background-image: url("../images/rainy.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  margin-top: 0px;
+  border: 1px solid blue;
+}
+
+.author {
+  font-family: 'Courier New', Courier, monospace;
+  color: blue;
+  font-size: 20px;
+}
