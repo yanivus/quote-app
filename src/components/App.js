@@ -17,9 +17,9 @@ function App() {
     "category": v[0]
   }
 
-  const [q, setQ] = useState("");
-  const [a, setA] = useState("");
-  const [cat, setCat] = useState("");
+  const [quote, setQuote] = useState("");
+  const [author, setAuthor] = useState("");
+  const [category, setCategory] = useState("");
 
 
   const capitalFL = (p) => {
@@ -38,23 +38,23 @@ function App() {
       try {
         const aq = await getQuote();
         if (aq) {
-          setQ(aq.quote);
-          setA(aq.author);
+          setQuote(aq.quote);
+          setAuthor(aq.author);
         } 
       } catch(e)  {
-        setQ(defQ);
-        setA(defA);
-        params.category = defC;
+        setQuote(defQ);
+        setAuthor(defA);
       }
     };
     mq();
+    setCategory(defC);
   });
 
 
   return (
     <div className="App pageBackground">
       <div>
-        <Quote c={q} au={a} cat={capitalFL(params.category)}/>
+        <Quote quote={quote} author={author} category={capitalFL(category)}/>
       </div>
     </div>
   );
