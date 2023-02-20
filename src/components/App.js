@@ -7,19 +7,19 @@ function App() {
 
   const defQ = 'I refuse to join any club that would have me as a member.';
   const defA = 'Groucho Marx';
-  const defC = 'Funny';
+  let defC = 'Funny';
 
   const categories = ['art', 'funny', 'inspire', 'life', 'love', 'management', 'sports', 'students'];
   const v = categories.sort(()=> Math.random() - Math.random()).slice(0,1);
-  // console.log(v);
+  defC = v[0];
   const params = {
     "language": "en",
-    "category": v[0]
+    "category": defC
   }
 
   const [quote, setQuote] = useState("");
   const [author, setAuthor] = useState("");
-  const [category, setCategory] = useState("");
+  const [category, setCategory] = useState(v[0]);
 
 
   const capitalFL = (p) => {
@@ -47,7 +47,6 @@ function App() {
       }
     };
     mq();
-    setCategory(defC);
   });
 
 
